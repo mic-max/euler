@@ -9,7 +9,6 @@ public final class p002 implements EulerSolution {
 		.map(n -> n[0]);
 
 	public String run() {
-		// System.out.println(FIB.filter(n -> n < 4000000).collect(Collectors.toList()));
 		Long sum = FIB.filter(n -> n < 4_000_000 && n % 2 == 0).reduce(Long::sum).get();
 		return String.format("%d", sum);
 	}
