@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public final class p003 implements EulerSolution {
