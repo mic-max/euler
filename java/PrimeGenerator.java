@@ -1,18 +1,18 @@
 import java.util.LinkedList;
-import java.util.Iterable;
+import java.util.Iterator;
 
-public class PrimeGenerator implements Iterable<Integer> {
-	private LinkedList<Integer> primes;
-	private int cur;
+public class PrimeGenerator implements Iterable<Long> {
+	private LinkedList<Long> primes;
+	private long cur;
 
 	public PrimeGenerator() {
 		primes = new LinkedList<>();
 		cur = 2;
 	}
 
-	public int get(int n) {
+	public long get(int n) {
 		outer: for (; primes.size() <= n; cur++) {
-			for (Integer p : primes) {
+			for (Long p : primes) {
 				if (cur % p == 0)
 					continue outer;
 			}
@@ -22,10 +22,25 @@ public class PrimeGenerator implements Iterable<Integer> {
 		return primes.get(n);
 	}
 
+	@Override
+	public Iterator<Long> iterator() {
+		Iterator<Long> iter = new Iterator<Long>() {
+			private int cur = 0;
+			public boolean hasNext() { return true; }
+			public void remove() { throw new UnsupportedOperationException(); }
+
+			public Long next() {
+				return get(cur++);
+			}
+		};
+
+		return iter;
+	}
+
 	public static void main(String[] args) {
 		PrimeGenerator pg = new PrimeGenerator();
 
-		for (Integer i : pg) {
+		for (Long i : pg) {
 			if (i > 77)
 				break;
 			System.out.println(i);
