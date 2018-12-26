@@ -1,12 +1,13 @@
-import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class PrimeGenerator implements Iterable<Long> {
-	private LinkedList<Long> primes;
+	private List<Long> primes;
 	private long cur;
 
 	public PrimeGenerator() {
-		primes = new LinkedList<>();
+		primes = new ArrayList<>();
 		cur = 2;
 	}
 
