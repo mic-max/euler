@@ -8,4 +8,5 @@ public final class EulerTest {
 	@Test public void testP003() { assertEquals("6857",      new p003().run()); }
 	@Test public void testP004() { assertEquals("906609",    new p004().run()); }
 	@Test public void testP005() { assertEquals("232792560", new p005().run()); }
+	@Test public void testP006() { assertEquals("25164150",  new p006().run()); }
 }
