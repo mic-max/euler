@@ -13,3 +13,5 @@ Clean  : `rm bin/*`
 
 #### Todo
 - try using maven, gradle and ant
+- make the prime generator a singleton, only generate primes once
+- load larger inputs from files
