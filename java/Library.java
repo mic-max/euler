@@ -35,6 +35,13 @@ final class Library {
 		return product;
 	}
 
+	public static int sumDigits(BigInteger num) {
+		int sum = 0;
+		for (char c : num.toString().toCharArray())
+			sum += Character.getNumericValue(c);
+		return sum;
+	}
+
 	private static final String[] ONES = {
 		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
 		"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
