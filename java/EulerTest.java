@@ -22,4 +22,5 @@ public final class EulerTest {
 	@Test public void testP017() { assertEquals("21124",        new p017().run()); }
 	@Test public void testP018() { assertEquals("1074",         new p018().run()); }
 	@Test public void testP019() { assertEquals("171",          new p019().run()); }
+	@Test public void testP020() { assertEquals("648",          new p020().run()); }
 }
