@@ -42,6 +42,26 @@ final class Library {
 		return sum;
 	}
 
+	public static int sqrt(int x) {
+		return (int) Math.floor(Math.sqrt(x));
+	}
+
+	public static int sumDivisors(int n) {
+		if (n < 1)
+			throw new IllegalArgumentException();
+
+		int sum = 1;
+		final int end = Library.sqrt(n);
+		for (int i = 2; i <= end; i++) {
+			if (n % i == 0)
+				sum += i + n/i;
+		}
+
+		if (end * end == n)
+			sum -= end;
+		return sum;
+	}
+
 	private static final String[] ONES = {
 		"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven",
 		"twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
