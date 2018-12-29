@@ -1,7 +1,16 @@
 import java.math.BigInteger;
 import java.util.stream.*;
+import java.util.Arrays;
 
 final class Library {
+
+	public static boolean anagram(String s1, String s2) {
+		char[] w1 = s1.replaceAll("[\\s]", "").toCharArray();
+		char[] w2 = s2.replaceAll("[\\s]", "").toCharArray();
+		Arrays.sort(w1);
+		Arrays.sort(w2);
+		return Arrays.equals(w1, w2);
+	}
 
 	public static boolean palindrome(String str) {
 		return str.equals(new StringBuilder(str).reverse().toString());
