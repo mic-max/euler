@@ -13,7 +13,11 @@ final class Library {
 	}
 
 	public static boolean palindrome(String str) {
-		return str.equals(new StringBuilder(str).reverse().toString());
+		return str.equals(reverse(str));
+	}
+
+	public static String reverse(String str) {
+		return new StringBuilder(str).reverse().toString();
 	}
 
 	public static String toEnglish(int n) {
