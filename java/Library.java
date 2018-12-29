@@ -42,6 +42,13 @@ final class Library {
 		return sum;
 	}
 
+	public static int scoreWord(String word) {
+		int score = word.length() * -64;
+		for (byte b : word.getBytes())
+			score += b;
+		return score;
+	}
+
 	public static int sqrt(int x) {
 		return (int) Math.floor(Math.sqrt(x));
 	}
