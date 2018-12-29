@@ -9,7 +9,7 @@ Run    : `./a.out`
 Compile: `javac -d bin -cp lib\* *.java`  
 Run    : `java -cp bin\;lib\* org.junit.runner.JUnitCore EulerTest`  
 Copy   : `cp tmp/pN.java p042.java`  
-Clean  : `rm bin/*`  
+Clean  : `rm bin/*.class`  
 
 #### Todo
 - try using maven, gradle and ant
