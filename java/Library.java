@@ -3,6 +3,10 @@ import java.util.stream.*;
 
 final class Library {
 
+	public static boolean palindrome(String str) {
+		return str.equals(new StringBuilder(str).reverse().toString());
+	}
+
 	public static String toEnglish(int n) {
 		if (n < 0 || n >= 1000000)
 			throw new IllegalArgumentException("Does not currently support negatives or millions.");
