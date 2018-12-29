@@ -1,4 +1,5 @@
 import java.math.BigInteger;
+import java.util.stream.*;
 
 final class Library {
 
@@ -67,6 +68,37 @@ final class Library {
 		if (end * end == n)
 			sum -= end;
 		return sum;
+	}
+
+	public static boolean[] listPrimality(int n) {
+		boolean[] result = new boolean[n + 1];
+		if (n >= 2)
+			result[2] = true;
+		for (int i = 3; i <= n; i += 2)
+			result[i] = true;
+		
+		// Sieve of Eratosthenes
+		for (int i = 3, end = sqrt(n); i <= end; i += 2) {
+			if (result[i]) {
+				for (int j = i * i, inc = i * 2; j <= n; j += inc)
+					result[j] = false;
+			}
+		}
+		return result;
+	}
+
+	public static int[] listPrimes(int n) {
+		boolean[] isPrime = listPrimality(n);
+		int count = (int) IntStream.range(0, isPrime.length).mapToObj(i -> isPrime[i]).filter(p -> p).count();
+
+		int[] result = new int[count];
+		for (int i = 0, j = 0; i < isPrime.length; i++) {
+			if (isPrime[i]) {
+				result[j] = i;
+				j++;
+			}
+		}
+		return result;
 	}
 
 	private static final String[] ONES = {
