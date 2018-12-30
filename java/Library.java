@@ -1,6 +1,8 @@
 import java.math.BigInteger;
 import java.util.stream.*;
-import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+import java.nio.file.*;
 
 final class Library {
 
@@ -116,6 +118,18 @@ final class Library {
 			}
 		}
 		return result;
+	}
+
+	public static Set<String> loadDictionary() {
+		Set<String> set = new HashSet<>();
+
+		try (Stream<String> stream = Files.lines(Paths.get("data/english.txt"))) {
+        	stream.forEach(w -> set.add(w));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return set;
 	}
 
 	private static final String[] ONES = {
