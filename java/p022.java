@@ -10,13 +10,6 @@ import java.util.stream.Stream;
 
 public final class p022 implements EulerSolution {
 
-	private static int scoreName(String name, int i) {
-		int score = name.length() * -64;
-		for (byte b : name.getBytes())
-			score += b;
-		return i * score;
-	}
-
 	public String run() {
 		AtomicInteger i = new AtomicInteger();
 		int result = -1;
@@ -25,7 +18,7 @@ public final class p022 implements EulerSolution {
 			result = Stream.of(buffer.readLine().split(","))
 			.map(s -> s.replaceAll("\"", ""))
 			.sorted()
-			.collect(Collectors.summingInt(s -> scoreName(s, i.incrementAndGet())));
+			.collect(Collectors.summingInt(s -> Library.scoreWord(s) * i.incrementAndGet()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

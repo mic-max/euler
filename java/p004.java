@@ -1,9 +1,5 @@
 public final class p004 implements EulerSolution {
 
-	private boolean palindrome(String str) {
-		return str.equals(new StringBuilder(str).reverse().toString());
-	}
-
 	public String run() {
 		int n = 0;
 
@@ -14,7 +10,7 @@ public final class p004 implements EulerSolution {
 			for (int j = i; j >= MIN; j--) {
 				int result = i * j;
 
-				if (result > n && palindrome("" + result))
+				if (result > n && Library.palindrome("" + result))
 					n = result;
 			}
 		}
