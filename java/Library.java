@@ -62,6 +62,10 @@ final class Library {
 		return sum;
 	}
 
+	public static int getDigit(int num, int k) {
+		return Character.getNumericValue(("" + num).toCharArray()[k]);
+	}
+
 	public static int scoreWord(String word) {
 		int score = word.length() * -64;
 		for (byte b : word.getBytes())

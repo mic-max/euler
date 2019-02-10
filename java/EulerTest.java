@@ -1,5 +1,6 @@
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.*;
 
 public final class EulerTest {
 
@@ -29,6 +30,7 @@ public final class EulerTest {
 	@Test public void testP024() { assertEquals("2783915460",   new p024().run()); }
 	@Test public void testP025() { assertEquals("4782",         new p025().run()); }
 	@Test public void testP036() { assertEquals("872187",       new p036().run()); }
+	@Test public void testP040() { assertEquals("210",       new p040().run()); }
 	@Test public void testP042() { assertEquals("162",          new p042().run()); }
 	@Test public void testP048() { assertEquals("9110846700",   new p048().run()); }
 	@Test public void testP052() { assertEquals("142857",       new p052().run()); }
